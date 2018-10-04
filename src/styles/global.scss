@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+//font-styles
+
+//default font styles for desktop
+
+$black: black;
+$off-black: #252525;
+
+$white: white;
+
+$purple: #AC63FF;
+
+
+h1 {
+    font-size: 50px;
+    color: $black;
+    line-height: 68px;
+    font-weight: 700;
+    margin: 0;
+}
+
+h1.light {
+    color: $white;
+}
+
+//h2
+
+h3 {
+    font-size: 26px;
+    color: $black;
+    line-height: 36px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h3.light {
+    color: $white;
+}
+
+h4 {
+    font-size: 18px;
+    color: $black;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0;
+}
+
+//h5
+
+h6 {
+    font-size: 10px;
+    color: $black;
+    line-height: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    color: $off-black;
+    line-height: 19px;
+    font-weight: 400;
+    margin: 0;
+}
+
+p.semibold {
+    font-weight: 600;
+}
+
+p.bold {
+    font-weight: 700;
+}
+
+.light {
+    color: $white;
+}
+
+
+
+//layout settings
+//Desktop
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.container {
+    width: 1000px;
+}
+
+
+//elements
+input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 4px;
+    border: none;
+
+}
+input::placeholder {
+    color: $off-black;
+}
+
+//buttons
+.btn {
+    border-radius: 4px;
+    background-color: $purple;
+    border: none;
+    color: $white;
+}
+
+
+
+
+//default styles
+#app {
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $black;
+}
+#nav {
+    padding: 30px;
+    a {
+        font-weight: bold;
+        color: #2c3e50;
+        &.router-link-exact-active {
+        color: #42b983;
+        }
+    }
+}
