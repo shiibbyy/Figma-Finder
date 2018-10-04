@@ -15,7 +15,6 @@ import Hero from '@/components/home/Hero.vue'
 export default {
   name: 'home',
   components: {
-    HelloWorld,
     Hero
   }
 }

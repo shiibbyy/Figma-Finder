@@ -1,6 +1,7 @@
 <template>
     <div class="section hero">
         <div class="container">
+
             <div class="content">
                 <h1 class="light">Figma Finder</h1>
                 <h3 class="light">All the Figma Resources you need. </br>
@@ -13,6 +14,14 @@
 
 
         </div>
+        <ul class="shapes">
+            <li class="shape"></li>
+            <li class="shape"></li>
+            <li class="shape"></li>
+            <li class="shape"></li>
+            <li class="shape"></li>
+            <li class="shape"></li>
+        </ul>
     </div>
 </template>
 
@@ -28,6 +37,7 @@ export default {
 .hero {
     height: 70vh;
     background-color: $off-black;
+    position: relative;
 }
 
 h1 {
@@ -45,6 +55,20 @@ h1 {
 
 .hero .content {
     margin-top: -30px;
+}
+
+.shapes {
+    position: absolute;
+}
+
+.shape {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    background-color: $purple;
+    list-style: none;
+    left: 0;
+    top: 0;
 }
 
 </style>
