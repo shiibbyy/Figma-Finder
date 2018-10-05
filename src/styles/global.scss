@@ -26,10 +26,6 @@ h1 {
     margin: 0;
 }
 
-h1.light {
-    color: $white;
-}
-
 //h2
 
 h3 {
@@ -38,10 +34,6 @@ h3 {
     line-height: 36px;
     font-weight: 400;
     margin: 0;
-}
-
-h3.light {
-    color: $white;
 }
 
 h4 {
@@ -70,11 +62,11 @@ p {
     margin: 0;
 }
 
-p.semibold {
+.semibold {
     font-weight: 600;
 }
 
-p.bold {
+.bold {
     font-weight: 700;
 }
 
