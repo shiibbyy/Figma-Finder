@@ -10,6 +10,12 @@ $off-black: #252525;
 $white: white;
 
 $purple: #AC63FF;
+$dark-green: #06D58E;
+$green: #47C99A;
+$blue: #1DC3FE;
+$light-red: #FF7E6D;
+$red: #F45921;
+
 
 
 h1 {
@@ -91,6 +97,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; 
+    position: relative;
+    overflow: hidden;
 }
 
 .container {

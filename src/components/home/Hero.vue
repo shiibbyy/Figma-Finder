@@ -21,6 +21,9 @@
             <li class="shape"></li>
             <li class="shape"></li>
             <li class="shape"></li>
+            <li class="shape"></li>
+            <li class="shape"></li>
+            <li class="shape"></li>
         </ul>
     </div>
 </template>
@@ -58,17 +61,112 @@ h1 {
 }
 
 .shapes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
 }
 
 .shape {
     height: 100px;
     width: 100px;
+    border-radius: 100%;
     position: absolute;
     background-color: $purple;
     list-style: none;
-    left: 0;
-    top: 0;
+    //animation
+    animation-name: floating;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 10px); }
+    to   { transform: translate(0, -0px); }    
+}
+
+.shape:nth-child(1) {
+    top: 15px;
+    left: -10px;
+    background-color: $light-red;
+    animation-delay: 2s;
+}
+
+.shape:nth-child(2) {
+    bottom: 0;
+    left: 50px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    animation-delay: 1s;
+}
+
+.shape:nth-child(3) {
+    height: 50px;
+    width: 50px;
+    border-bottom-right-radius: 0;
+    background-color: $green;
+    top: 150px;
+    animation-delay: 0.5s;
+}
+
+.shape:nth-child(4) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background-color: $light-red;
+    top: 170px;
+    right: 200px;
+    animation-delay: 3s;
+}
+
+.shape:nth-child(5) {
+    background-color: $green;
+    top: 50px;
+    right: 5px;
+    animation-delay: 1s;
+}
+
+.shape:nth-child(6) {
+    height: 50px;
+    width: 50px;
+    border-top-left-radius: 0;
+    background-color: $blue;
+    bottom: 275px;
+    right: 130px;
+    animation-duration: 8s;
+    animation-delay: 1.5s;
+}
+
+.shape:nth-child(7) {
+    background-color: $red;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    bottom: 0;
+    right: -25px;
+    animation-delay: .5s;
+}
+
+.shape:nth-child(8) {
+    background-color: $blue;
+    margin-left: 200px;
+    margin-top: 300px;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.shape:nth-child(9) {
+    height: 50px;
+    width: 50px;
+    background-color: $purple;
+    border-top-right-radius: 0;
+    margin-left: 285px;
+    margin-top: 215px;
 }
 
 </style>
