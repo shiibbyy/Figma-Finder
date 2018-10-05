@@ -6,7 +6,7 @@
 
 $black: black;
 $off-black: #252525;
-
+$grey: #eeeeee;
 $white: white;
 
 $purple: #AC63FF;
@@ -116,6 +116,11 @@ input::placeholder {
     background-color: $purple;
     border: none;
     color: $white;
+    padding: 7px 20px;
+}
+
+.btn-sml {
+    padding: 3px 20px;
 }
 
 

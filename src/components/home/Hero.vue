@@ -52,7 +52,7 @@ h1 {
     padding-top: 80px;
 }
 
-.btn {
+.hero .btn {
     margin-left: 10px;
 }
 
