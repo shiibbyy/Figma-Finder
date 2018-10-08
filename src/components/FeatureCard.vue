@@ -14,7 +14,7 @@
             </div>
             <div class="row-3">
                 <a :href="resourceLink" class="btn main" target="_blank" >
-                    <p class="light semibold">Download Resource</p>
+                    <p class="light semibold" for="info" >Download Resource</p>
                 </a>
                 <a :href="resourceInfo" class="btn icon " target="_blank">
                     <p class="light semibold">I</p>
