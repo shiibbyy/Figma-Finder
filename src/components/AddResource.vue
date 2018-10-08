@@ -119,7 +119,7 @@ export default {
     flex-direction: column;
 }
 
-input {
+form input {
     background-color: $white;
     border: 1px solid $black;
     color: $black;
