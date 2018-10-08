@@ -16,7 +16,9 @@ $blue: #1DC3FE;
 $light-red: #FF7E6D;
 $red: #F45921;
 
+//default section & container widths.
 
+$desktop-container: 1140px;
 
 h1 {
     font-size: 50px;
@@ -94,7 +96,7 @@ body {
 }
 
 .container {
-    width: 1000px;
+    width: $desktop-container;
 }
 
 
