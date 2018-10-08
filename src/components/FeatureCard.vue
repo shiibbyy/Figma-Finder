@@ -13,9 +13,14 @@
                 <p>By <strong>{{ authorName }}</strong></p>
             </div>
             <div class="row-3">
-                <a :href="resourceLink" class="btn main" target="_blank"><p class="light semibold">Download Resource</p></a>
-                <a :href="resourceInfo" class="btn icon" target="_blank"><p class="light semibold">I</p></a>
+                <a :href="resourceLink" class="btn main" target="_blank" >
+                    <p class="light semibold">Download Resource</p>
+                </a>
+                <a :href="resourceInfo" class="btn icon " target="_blank">
+                    <p class="light semibold">I</p>
+                </a>
             </div>
+
         </div>
     </div>
 </template>
@@ -31,11 +36,21 @@ export default {
             
         }
     },
-}
+    methods: {
+        
+    },
+    computed: {
+        
+        }
+    }
 </script>
 
 <style lang="scss">
 @import '@/styles/global.scss';
+
+.available {
+    display: none;
+}
 
 .feature-card {
     margin: 18px 15px;

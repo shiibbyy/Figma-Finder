@@ -44,7 +44,7 @@ export default {
                     authorImage: 'https://images.pexels.com/photos/395085/pexels-photo-395085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260', 
                     authorName: 'Kieran', 
                     resourceLink: '', 
-                    resourceInfo: 'google.com', 
+                    resourceInfo: '', 
                     id: '3', 
                     slug:'ui-kit-v2' },
 
@@ -62,6 +62,9 @@ export default {
                 ]
             }
         },
+        methods: {
+            
+        }
 }
 </script>
 
