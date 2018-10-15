@@ -93,7 +93,7 @@ export default {
             resourcePrice: null,
             downloadLink: null,
             resourceDescription: null,
-            // date: firebase.database.ServerValue.TIMESTAMP,
+            date: null,
             slug: null,
         }
     },
@@ -112,7 +112,6 @@ export default {
                 if (this.resourcePrice == 0) {
                 this.resourcePrice = "FREE"
                 }
-
                 
 
                 db.collection('resources').add({
