@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import AddResource from '@/components/AddResource'
+import AddResource from './views/AddResource.vue'
 
 Vue.use(Router)
 

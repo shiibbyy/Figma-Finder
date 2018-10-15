@@ -6,6 +6,7 @@
         {{ currentPage + 1}} of {{ totalPages() }}
 
         <span v-if="showNextLink()" class="pagination-btn" v-on:click="updatePage(currentPage + 1)">></span>
+        
 
     </div>
 
@@ -13,9 +14,20 @@
 </template>
 
 <script>
+import paginate from 'vuejs-paginate'
+
+
 export default {
     name: "pagination",
     props: ['resources', 'currentPage', 'pageSize'],
+    components: {
+
+    },
+    data() {
+        return {
+            
+        }
+    },
     methods: {
         updatePage(pageNumber) {
             this.$emit('page:update', pageNumber);

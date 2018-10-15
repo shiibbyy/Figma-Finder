@@ -55,7 +55,7 @@ export default {
             return {
                 resources: [],
                 currentPage: 0,
-                pageSize: 3,
+                pageSize: 5,
                 visibleResources: [],
             }
         },
@@ -87,7 +87,7 @@ export default {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .grid-container {

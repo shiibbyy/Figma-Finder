@@ -1,5 +1,13 @@
 <template>
     <div class="section">
+        <AddForm />
+
+
+
+
+
+
+
         <div class="container">
             <h2>Add New Resource</h2>
             <form @submit.prevent="AddResource">
@@ -44,6 +52,11 @@
                 </div>
 
                 <div class="field">
+                    <label for="title">Category</label>
+                    <input type="text" name="category" placeholder="What category is this?" v-model="category">
+                </div>
+
+                <div class="field">
                     <label for="title">Download Link</label>
                     <input type="url" name="resourceLink" placeholder="Where can people download this resource" v-model="resourceLink">
                 </div>
@@ -57,6 +70,7 @@
 </template>
 
 <script>
+import AddForm from '@/components/addResource/AddForm.vue'
 import db from '@/firebase/init'
 import slugify from 'slugify'
 
@@ -74,6 +88,7 @@ export default {
             originalURL: null,
             resourceLink: null,
             slug: null,
+            category: null,
         }
     },
     methods: {
