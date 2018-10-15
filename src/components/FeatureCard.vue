@@ -5,18 +5,18 @@
         </div>
         <div class="card-content">
             <div class="row-1">
-                <h4 class="bold">{{ title }}</h4>
-                <button class="price"><h6 class="bold">{{ price }}</h6></button>
+                <h4 class="bold">{{ resourceTitle }}</h4>
+                <button class="price"><h6 class="bold">{{ resourcePrice }}</h6></button>
             </div>
             <div class="row-2">
-                <img :src="authorImage" alt="Author Image">
-                <p>By <strong>{{ authorName }}</strong></p>
+                <img :src="creatorImage" alt="Author Image">
+                <p>By <strong>{{ creatorsName }}</strong></p>
             </div>
             <div class="row-3">
-                <a :href="resourceLink" class="btn main" target="_blank" >
+                <a :href="downloadLink" class="btn main" target="_blank" >
                     <p class="light semibold" for="info" >Download Resource</p>
                 </a>
-                <a :href="resourceInfo" class="btn icon " target="_blank">
+                <a :href="resourceOriginalLink" class="btn icon " target="_blank">
                     <p class="light semibold">I</p>
                 </a>
             </div>
@@ -29,7 +29,7 @@
 export default {
     name: 'FeatureCard',
     props: [
-        'featuredImage', 'title', 'price', 'authorName', 'authorImage', 'resourceLink', 'resourceInfo', 
+        'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 
         ],
     data() {
         return {

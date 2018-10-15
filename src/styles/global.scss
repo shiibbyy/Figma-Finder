@@ -6,6 +6,7 @@
 
 $black: black;
 $off-black: #252525;
+$dark-grey: #b1b1b1;
 $grey: #eeeeee;
 $white: white;
 
@@ -28,7 +29,13 @@ h1 {
     margin: 0;
 }
 
-//h2
+h2 {
+    font-size: 42px;
+    color: $black;
+    line-height: 50px;
+    font-weight: 700;
+    margin: 0;
+}
 
 h3 {
     font-size: 26px;
@@ -76,6 +83,13 @@ p {
     color: $white;
 }
 
+label {
+    font-size: 11px;
+    color: $dark-grey;
+    margin-bottom: 4px;
+
+}
+
 
 
 //layout settings
@@ -107,10 +121,22 @@ input {
     width: 300px;
     border-radius: 4px;
     border: none;
-
 }
+
 input::placeholder {
     color: $off-black;
+}
+
+textarea::placeholder {
+    color: $off-black;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+}
+
+input:focus {
+    border-color: $purple;
 }
 
 //buttons
@@ -126,6 +152,14 @@ input::placeholder {
     padding: 3px 20px;
 }
 
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+:required {
+    border: 1px solid $light-red .5;
+  }
 
 
 

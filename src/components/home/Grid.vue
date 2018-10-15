@@ -9,12 +9,12 @@
             :key="resource.id">
                 <FeatureCard 
                     v-bind:featuredImage="resource.featuredImage"
-                    v-bind:title="resource.title"
-                    v-bind:price="resource.price"
-                    v-bind:authorName="resource.authorName"
-                    v-bind:authorImage="resource.authorImage"
-                    v-bind:resourceLink="resource.resourceLink"
-                    v-bind:resourceInfo="resource.resourceInfo"
+                    v-bind:resourceTitle="resource.resourceTitle"
+                    v-bind:resourcePrice="resource.resourcePrice"
+                    v-bind:creatorsName="resource.creatorsName"
+                    v-bind:creatorImage="resource.creatorImage"
+                    v-bind:downloadLink="resource.downloadLink"
+                    v-bind:resourceOriginalLink="resource.resourceOriginalLink"
                 />
             </div>            
         </div>

@@ -1,14 +1,7 @@
 <template>
     <div class="section">
-        <AddForm />
-
-
-
-
-
-
-
-        <div class="container">
+        <SubmitResource />
+        <!-- <div class="container">
             <h2>Add New Resource</h2>
             <form @submit.prevent="AddResource">
                 <div class="field">
@@ -65,62 +58,21 @@
                     <button class="btn">Add Resource</button>
                 </div>
             </form>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script>
-import AddForm from '@/components/addResource/AddForm.vue'
-import db from '@/firebase/init'
-import slugify from 'slugify'
+import SubmitResource from '@/components/forms/SubmitResource.vue'
 
 export default {
     name: 'AddResource',
+    components: {
+        SubmitResource,
+    },
     data() {
         return {
-            title: null,
-            featuredImage: null,
-            authorName: null,
-            authorImage: null,
-            authorLink: null,
-            price: null,
-            date: null,
-            originalURL: null,
-            resourceLink: null,
-            slug: null,
-            category: null,
-        }
-    },
-    methods: {
-        AddResource(){
-            if (this.title){
-                this.feedback = null
-                //create slug
-                this.slug = slugify(this.title, {
-                    replacement: '-',
-                    remove: /[$*_+-:@"'`~±§?()]/g,
-                    lower: true
-                })
-                db.collection('resources').add({
-                    title: this.title,
-                    featuredImage: this.featuredImage,
-                    authorName: this.authorName,
-                    authorImage: this.authorImage,
-                    authorLink: this.authorLink,
-                    price: this.price,
-                    date: this.date,
-                    originalURL: this.originalURL,
-                    resourceLink: this.resourceLink,
-                    slug: this.slug
-
-                }).then(() => {
-                    this.$router.push({ name: 'home'})
-                }).catch(err => {
-                    console.log(err)
-                })
-            } else {
-                this.feedback = "You must enter a smoothie title"
-            }
+            
         }
     }
 }
@@ -129,10 +81,10 @@ export default {
 <style lang="scss">
 @import '@/styles/global.scss';
 
-.field {
-    display: flex;
-    flex-direction: column;
-}
+// .field {
+//     display: flex;
+//     flex-direction: column;
+// }
 
 form input {
     background-color: $white;
