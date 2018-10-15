@@ -2,7 +2,11 @@
     <div class="section grid">
         <div class="container grid-container">
             <!-- <h1>This Is The Grid</h1> -->
-            <div class="featured-card" v-for="resource in resources" :key="resource.id">
+            <div class="featured-card" 
+            v-for="resource in visibleResources"
+            v-bind:visibleResources="visibleResources"
+            v-bind:currentPage="currentPage"
+            :key="resource.id">
                 <FeatureCard 
                     v-bind:featuredImage="resource.featuredImage"
                     v-bind:title="resource.title"
@@ -12,30 +16,29 @@
                     v-bind:resourceLink="resource.resourceLink"
                     v-bind:resourceInfo="resource.resourceInfo"
                 />
-            </div>
-            
+            </div>            
         </div>
+            <pagination 
+                v-bind:resources="resources"
+                v-on:page:update="updatePage"
+                v-bind:currentPage="currentPage"
+                v-bind:pageSize="pageSize"
+            />        
     </div>
 </template>
 
 <script>
 import FeatureCard from '@/components/FeatureCard.vue'
 import db from '@/firebase/init'
+import Pagination from '@/components/Pagination.vue'
 
 export default {
     name: 'Grid',
     components: {
-    FeatureCard
+    FeatureCard,
+    Pagination
     },
-    data() {
-            return {
-                resources: []
-            }
-        },
-        methods: {
-            
-        },
-        created(){
+    created(){
             db.collection('resources').get()
             .then(snapshot => {
                 snapshot.forEach(doc => {
@@ -44,9 +47,37 @@ export default {
                     this.resources.push(resource)
                     
                 })
+                this.updateVisibleResources();
             })
-        }
+            
+        },
+    data() {
+            return {
+                resources: [],
+                currentPage: 0,
+                pageSize: 3,
+                visibleResources: [],
+            }
+        },
+        methods: {
+            updatePage(pageNumber) {
+                this.currentPage = pageNumber;
+                this.updateVisibleResources();
+            },
+            updateVisibleResources() {
+                this.visibleResources = this.resources.slice(this.currentPage * this.pageSize, (this.currentPage * this.pageSize) + this.pageSize);
+                
+
+                //stop from neg pages
+                // if (this.visibleResources.length == 0 && this.currentPage > 0) {
+                //     this.updatePage(this.currentPage - 1);
+                // }
+
+            }
+        },
 }
+
+
 </script>
 
 <style lang="scss">
@@ -55,7 +86,8 @@ export default {
 .grid .container {
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-direction: row;
+    // flex-wrap: wrap;
 }
 
 .grid-container {

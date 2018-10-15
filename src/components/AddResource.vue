@@ -70,7 +70,7 @@ export default {
             authorImage: null,
             authorLink: null,
             price: null,
-            date: null,
+            date: DateNow(),
             originalURL: null,
             resourceLink: null,
             slug: null,
