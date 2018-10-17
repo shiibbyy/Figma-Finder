@@ -1,6 +1,9 @@
 <template>
     <div class="feature-card">
         <div class="feature-image-container">
+            <div v-bind:class="compClasses" class="category-tag">
+                <h6 class="bold light">{{ resourceCategory }}</h6>
+            </div>
             <img class="feature-image" :src="featuredImage" alt="feature image">
         </div>
         <div class="card-content">
@@ -29,19 +32,20 @@
 export default {
     name: 'FeatureCard',
     props: [
-        'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 
+        'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory',
         ],
     data() {
         return {
-            
+            desktop: false,
+            mobile: false,
         }
+    },
+    created() {
+        
     },
     methods: {
         
     },
-    computed: {
-        
-        }
     }
 </script>
 
@@ -60,8 +64,27 @@ export default {
 }
 
 .feature-image-container {
+    position: relative;
     width: 100%;
 }
+
+.feature-image-container .category-tag {
+    position: absolute;
+    background-color: $blue;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.feature-image-container .mobile {
+    background-color: $green;
+}
+
+.feature-image-container .mobile {
+    background-color: $red;
+}
+
 
 .feature-image {
     object-fit: cover;

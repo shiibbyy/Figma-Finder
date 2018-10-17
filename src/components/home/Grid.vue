@@ -1,6 +1,10 @@
 <template>
     <div class="section grid">
         <div class="container grid-container">
+            <div class="filter-container">
+                <input type="text" v-model="search" placeholder="Search Finds">
+            </div>
+
             <!-- <h1>This Is The Grid</h1> -->
             <div class="featured-card" 
             v-for="resource in visibleResources"
@@ -15,6 +19,8 @@
                     v-bind:creatorImage="resource.creatorImage"
                     v-bind:downloadLink="resource.downloadLink"
                     v-bind:resourceOriginalLink="resource.resourceOriginalLink"
+                    v-bind:resourceCategory="resource.resourceCategory"
+                    
                 />
             </div>            
         </div>
@@ -49,15 +55,27 @@ export default {
                 })
                 this.updateVisibleResources();
             })
+
             
         },
+
     data() {
             return {
                 resources: [],
                 currentPage: 0,
-                pageSize: 5,
+                pageSize: 2,
                 visibleResources: [],
+                search: "",
+                selectedCategory: "All"
             }
+        },
+        computed: {
+            // search function. Issue being i cannot use another resource array
+            // filteredFinds: function(){
+            //     return this.resources.filter((resource) => {
+            //         return resource.resourceTitle.match(this.search);
+            //     })
+            // }
         },
         methods: {
             updatePage(pageNumber) {
@@ -73,7 +91,13 @@ export default {
                 //     this.updatePage(this.currentPage - 1);
                 // }
 
+            },
+
+            filter: function(event) {
+                
             }
+
+
         },
 }
 
@@ -88,6 +112,11 @@ export default {
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.filter-container {
+    width: 100%;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .grid-container {

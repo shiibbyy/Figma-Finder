@@ -39,8 +39,20 @@
                     <div class="row">
                         <div class="form-field">
                             <label for="title">Resource Category</label>
-                            <input class="form-input" type="text" name="resourceCategory" placeholder="What Category Is This Resource?" v-model="resourceCategory">
+                            <select class="form-input" type="text" name="resourceCategory" v-model="resourceCategory">
+                                <option disabled value="">Please select one</option>
+                                <option value="Desktop">Desktop</option>
+                                <option value="Mobile">Mobile</option>
+                                <option value="Icons">Icons</option>
+                                <option value="Other">Other</option>
+                            </select> 
                         </div>
+
+                        <!-- <div class="form-field">
+                            <label for="title">Resource Category</label>
+                            <input class="form-input" type="text" name="resourceCategory" placeholder="What Category Is This Resource?" v-model="resourceCategory">
+                        </div> -->
+
                         <div class="form-field">
                             <label for="title">Resource Price ($)</label>
                             <input class="form-input" type="number" min="0" max="1000" step="0.01" name="resourcePrice" placeholder="0" v-model="resourcePrice">
@@ -137,10 +149,6 @@ export default {
             } else {
                 this.feedback = "You must enter a resource title"
             }
-
-            
-
-
         }
     }
 }
