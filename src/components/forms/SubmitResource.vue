@@ -122,9 +122,14 @@ export default {
                 })
 
                 if (this.resourcePrice == 0) {
-                this.resourcePrice = "FREE"
+                    this.resourcePrice = "FREE"
+                } else {
+                    this.resourcePrice = "$" + this.resourcePrice
                 }
                 
+                if (this.date = null) {
+                    this.date = firestore.FieldValue.serverTimestamp()
+                }
 
                 db.collection('resources').add({
 

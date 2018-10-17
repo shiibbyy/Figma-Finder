@@ -29,7 +29,8 @@
                 v-on:page:update="updatePage"
                 v-bind:currentPage="currentPage"
                 v-bind:pageSize="pageSize"
-            />        
+            /> 
+   
     </div>
 </template>
 
@@ -66,7 +67,8 @@ export default {
                 pageSize: 2,
                 visibleResources: [],
                 search: "",
-                selectedCategory: "All"
+                items: ['Item One', 'Item Two', 'Item Three', 'Item Four', 'Item Five', 'Item Six', 'Item Seven', 'Item Eight', 'Item Nine', 'Item Ten', 'Item Eleven', 'Item Twelve', 'Item Thirteen'],
+                paginate: ['items']
             }
         },
         computed: {
@@ -133,5 +135,6 @@ export default {
     min-width: 280px;
     flex-basis: 33.333%;
 }
+
 
 </style>

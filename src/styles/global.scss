@@ -83,6 +83,10 @@ p {
     color: $white;
 }
 
+.dark-grey {
+    color: $dark-grey;
+}
+
 label {
     font-size: 11px;
     color: $dark-grey;
@@ -159,7 +163,7 @@ input:focus {
 
 :required {
     border: 1px solid $light-red .5;
-  }
+}
 
 
 
