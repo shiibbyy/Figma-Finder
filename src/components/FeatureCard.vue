@@ -12,16 +12,17 @@
                 <button class="price"><h6 class="bold">{{ resourcePrice }}</h6></button>
             </div>
             <div class="row-2">
-                <img :src="creatorImage" alt="Author Image">
+                <img :src="creatorImage" @error="defaultAvatar">
+
                 <p>By <strong>{{ creatorsName }}</strong></p>
             </div>
             <div class="row-3">
                 <a :href="downloadLink" class="btn main" target="_blank" >
                     <p class="light semibold" for="info" >Download Resource</p>
                 </a>
-                <a :href="resourceOriginalLink" class="btn icon" target="_blank">
+                <!-- <a :href="resourceOriginalLink" class="btn icon" target="_blank">
                     <p class="light semibold">I</p>
-                </a>
+                </a> -->
             </div>
 
         </div>
@@ -44,7 +45,9 @@ export default {
         
     },
     methods: {
-        
+        defaultAvatar() {
+            return require('../assets/FigmaFinder-Logo.png')
+        }
     },
     }
 </script>

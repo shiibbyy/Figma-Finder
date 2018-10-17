@@ -1,5 +1,6 @@
 <template>
     <div class="section grid">
+
         <div class="container grid-container">
             <div class="filter-container">
                 <input type="text" v-model="search" placeholder="Search Finds">
@@ -30,7 +31,6 @@
                 v-bind:currentPage="currentPage"
                 v-bind:pageSize="pageSize"
             /> 
-   
     </div>
 </template>
 
@@ -66,9 +66,6 @@ export default {
                 currentPage: 0,
                 pageSize: 2,
                 visibleResources: [],
-                search: "",
-                items: ['Item One', 'Item Two', 'Item Three', 'Item Four', 'Item Five', 'Item Six', 'Item Seven', 'Item Eight', 'Item Nine', 'Item Ten', 'Item Eleven', 'Item Twelve', 'Item Thirteen'],
-                paginate: ['items']
             }
         },
         computed: {

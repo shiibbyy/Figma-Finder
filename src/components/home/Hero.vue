@@ -7,8 +7,7 @@
                 <h3 class="light">All the Figma Resources you need. </br>
                 Right here, right now, found by us.</h3>
                 <div class="form-row">
-                    <input type="text" placeholder="Enter Email">
-                    <button class="btn"><p class="semibold light">Sign Up!</p></button>
+                    <mailchimp />
                 </div>
             </div>
 
@@ -29,8 +28,13 @@
 </template>
 
 <script>
+import Mailchimp from '@/components/forms/Mailchimp.vue'
+
 export default {
-    name: 'Hero'
+    name: 'Hero',
+    components: {
+        Mailchimp,
+    }
 }
 </script>
 
@@ -56,6 +60,10 @@ h1 {
     margin-left: 10px;
 }
 
+.hero .container {
+    z-index: 5;
+}
+
 .hero .content {
     margin-top: -30px;
 }
@@ -68,6 +76,7 @@ h1 {
     width: inherit;
     height: inherit;
     overflow: hidden;
+    z-index: 1;
 }
 
 .shape {

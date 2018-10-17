@@ -11,8 +11,7 @@
           <img src="@/assets/FigmaFinder-Logo.png" alt="Figma Finder">
           <p class="light">Whatever we find, directly to your inbox!</p>
           <div class="form-row">
-            <input type="text" placeholder="Enter Email">
-            <button class="btn"><p class="semibold light">Sign Up!</p></button>  
+            <mailchimp /> 
           </div>
           <h6 class="light">
             Designed by Kieran Parker & Built by Joshua Parker
@@ -26,6 +25,17 @@
     </div>
   </div>
 </template>
+
+<script>
+import Mailchimp from '@/components/forms/Mailchimp.vue'
+
+export default {
+    components: {
+        Mailchimp,
+    }
+}
+</script>
+
 
 
 
@@ -58,6 +68,28 @@
 .footer h6 {
   opacity: 0.5;
   margin-bottom: 10px;
+}
+
+.footer .email-input {
+    height: 30px;
+    width: 300px;
+    border-radius: 4px;
+    border: none;
+}
+
+.footer .email-button {
+    height: 30px;
+    border-radius: 4px;
+    background-color: $purple;
+    border: none;
+    color: $white;
+    padding: 0px 14px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.footer .form-row p {
+  font-size: 12px;
 }
 
 </style>
