@@ -35,38 +35,38 @@
 </template>
 
 <script>
-import FeatureCard from "@/components/FeatureCard.vue";
-import db from "@/firebase/init";
-import Pagination from "@/components/Pagination.vue";
+import FeatureCard from '@/components/FeatureCard.vue'
+import db from '@/firebase/init'
+import Pagination from '@/components/Pagination.vue'
 
 export default {
-  name: "Grid",
+  name: 'Grid',
   components: {
     FeatureCard,
     Pagination
   },
-  created() {
-    db.collection("resources")
-      .orderBy("timestamp")
+  created () {
+    db.collection('resources')
+      .orderBy('timestamp')
       .get()
       .then(snapshot => {
         snapshot.forEach(doc => {
-          let resource = doc.data();
-          resource.id = doc.id;
-          this.resources.push(resource);
-        });
-        this.resources = this.resources.reverse();
-        this.updateVisibleResources();
-      });
+          let resource = doc.data()
+          resource.id = doc.id
+          this.resources.push(resource)
+        })
+        this.resources = this.resources.reverse()
+        this.updateVisibleResources()
+      })
   },
 
-  data() {
+  data () {
     return {
       resources: [],
       currentPage: 0,
       pageSize: 20,
       visibleResources: []
-    };
+    }
   },
 
   computed: {
@@ -79,16 +79,16 @@ export default {
   },
 
   methods: {
-    updatePage(pageNumber) {
-      this.currentPage = pageNumber;
-      this.updateVisibleResources();
+    updatePage (pageNumber) {
+      this.currentPage = pageNumber
+      this.updateVisibleResources()
     },
-    updateVisibleResources() {
+    updateVisibleResources () {
       // this.resources = this.resources.reverse()
       this.visibleResources = this.resources.slice(
         this.currentPage * this.pageSize,
         this.currentPage * this.pageSize + this.pageSize
-      );
+      )
 
       // stop from neg pages
       // if (this.visibleResources.length == 0 && this.currentPage > 0) {
@@ -96,9 +96,9 @@ export default {
       // }
     },
 
-    filter: function(event) {}
+    filter: function (event) {}
   }
-};
+}
 </script>
 
 <style lang="scss">

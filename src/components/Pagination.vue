@@ -6,7 +6,7 @@
             <!-- <span v-if="showNextLink()" class="pagination-btn" v-on:click="updatePage(currentPage + 1)">></span> -->
 
             <div class="page-buttons-wrapper">
-                <button v-if="currentPage > 0" class="page-button" v-on:click="updatePage(currentPage - 1)"><p class="light semibold"><</p></button>
+                <button v-if="currentPage > 0" class="page-button" v-on:click="updatePage(currentPage - 1)"><p class="light semibold"></p></button>
 
                 <button class="page-button" v-for="(page, index) in totalPages()" :key="index" v-on:click="updatePage(index)">
                     <p class="light semibold">{{ index + 1}}</p>
@@ -27,30 +27,30 @@
 import paginate from 'vuejs-paginate'
 
 export default {
-  name: 'pagination',
-  props: ['resources', 'currentPage', 'pageSize'],
-  components: {
+    name: 'pagination',
+    props: ['resources', 'currentPage', 'pageSize'],
+    components: {
 
-  },
-  data () {
-    return {
+    },
+    data () {
+        return {
 
+        }
+    },
+    methods: {
+        updatePage (pageNumber) {
+        this.$emit('page:update', pageNumber)
+        },
+        totalPages () {
+        return Math.ceil(this.resources.length / this.pageSize)
+        },
+        showPreviousLink () {
+        return this.currentPage !== 1
+        },
+        showNextLink () {
+        return this.currentPage !== (this.totalPages() - 1)
+        }
     }
-  },
-  methods: {
-    updatePage (pageNumber) {
-      this.$emit('page:update', pageNumber)
-    },
-    totalPages () {
-      return Math.ceil(this.resources.length / this.pageSize)
-    },
-    showPreviousLink () {
-      return this.currentPage != 1
-    },
-    showNextLink () {
-      return this.currentPage != (this.totalPages() - 1)
-    }
-  }
 }
 </script>
 

@@ -4,7 +4,7 @@
 
             <div class="content">
                 <h1 class="light">Figma Finder</h1>
-                <h3 class="light">All the Figma Resources you need. </br>
+                <h3 class="light">All the Figma Resources you need. <br>
                 Right here, right now, found by us.</h3>
                 <div class="form-row">
                     <mailchimp />
