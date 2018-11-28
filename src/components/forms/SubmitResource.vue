@@ -89,6 +89,7 @@
 <script>
 import db from '@/firebase/init'
 import slugify from 'slugify'
+import moment from 'moment'
 
 export default {
     name: 'SubmitResource',
@@ -105,7 +106,7 @@ export default {
             resourcePrice: null,
             downloadLink: null,
             resourceDescription: null,
-            date: null,
+            timestamp: null,
             slug: null,
         }
     },
@@ -143,7 +144,7 @@ export default {
                     resourcePrice: this.resourcePrice,
                     downloadLink: this.downloadLink,
                     resourceDescription: this.resourceDescription,
-                    date: this.date,
+                    timestamp: moment(Date.now()).format('lll'),
                     slug: this.slug
 
                 }).then(() => {

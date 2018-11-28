@@ -1,25 +1,27 @@
 <template>
-    
-    <div v-if="totalPages() > 1" class="pagination-wrapper">
-        <!-- <span v-if="showPreviousLink()" class="pagination-btn" v-on:click="updatePage(currentPage - 1)"><</span> -->
+    <div class="button-container">
+        <div v-if="totalPages() > 1" class="pagination-wrapper">
+            <!-- <span v-if="showPreviousLink()" class="pagination-btn" v-on:click="updatePage(currentPage - 1)"><</span> -->
 
-        <!-- <span v-if="showNextLink()" class="pagination-btn" v-on:click="updatePage(currentPage + 1)">></span> -->
+            <!-- <span v-if="showNextLink()" class="pagination-btn" v-on:click="updatePage(currentPage + 1)">></span> -->
 
 
-        <div class="page-buttons-wrapper">
-            <button v-if="currentPage > 0" class="page-button" v-on:click="updatePage(currentPage - 1)"><p class="light semibold"><</p></button>
+            <div class="page-buttons-wrapper">
+                <button v-if="currentPage > 0" class="page-button" v-on:click="updatePage(currentPage - 1)"><p class="light semibold"><</p></button>
 
-            <button class="page-button" v-for="(page, index) in totalPages()" :key="index" v-on:click="updatePage(index)">
-                <p class="light semibold">{{ index + 1}}</p>
-            </button>
+                <button class="page-button" v-for="(page, index) in totalPages()" :key="index" v-on:click="updatePage(index)">
+                    <p class="light semibold">{{ index + 1}}</p>
+                </button>
 
-            <button v-if="currentPage < totalPages() - 1 " class="page-button" v-on:click="updatePage(currentPage + 1)"><p class="light semibold">></p></button>
+                <button v-if="currentPage < totalPages() - 1 " class="page-button" v-on:click="updatePage(currentPage + 1)"><p class="light semibold">></p></button>
+            </div>
+            <div class="page-count">
+                <h6 class="dark-grey">Page {{ currentPage + 1}} of {{ totalPages() }}</h6>
+            </div>
+
         </div>
-        <div class="page-count">
-            <h6 class="dark-grey">Page {{ currentPage + 1}} of {{ totalPages() }}</h6>
-        </div>
-
     </div>
+    
 
 
 </template>
@@ -58,6 +60,12 @@ export default {
 
 <style lang="scss">
 @import '@/styles/global.scss';
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 .page-buttons-wrapper {
     display: flex;

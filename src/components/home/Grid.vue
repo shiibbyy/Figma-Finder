@@ -2,9 +2,9 @@
     <div class="section grid">
 
         <div class="container grid-container">
-            <div class="filter-container">
+            <!-- <div class="filter-container">
                 <input type="text" v-model="search" placeholder="Search Finds">
-            </div>
+            </div> -->
 
             <!-- <h1>This Is The Grid</h1> -->
             <div class="featured-card" 
@@ -46,7 +46,9 @@ export default {
     Pagination
     },
     created(){
-            db.collection('resources').get()
+            db.collection('resources')
+            .orderBy('timestamp')
+            .get()
             .then(snapshot => {
                 snapshot.forEach(doc => {
                     let resource = doc.data()
@@ -54,6 +56,7 @@ export default {
                     this.resources.push(resource)
                     
                 })
+                this.resources = this.resources.reverse();
                 this.updateVisibleResources();
             })
 
@@ -64,10 +67,11 @@ export default {
             return {
                 resources: [],
                 currentPage: 0,
-                pageSize: 2,
+                pageSize: 16,
                 visibleResources: [],
             }
         },
+
         computed: {
             // search function. Issue being i cannot use another resource array
             // filteredFinds: function(){
@@ -76,12 +80,15 @@ export default {
             //     })
             // }
         },
+
         methods: {
             updatePage(pageNumber) {
                 this.currentPage = pageNumber;
                 this.updateVisibleResources();
             },
             updateVisibleResources() {
+                
+                // this.resources = this.resources.reverse()
                 this.visibleResources = this.resources.slice(this.currentPage * this.pageSize, (this.currentPage * this.pageSize) + this.pageSize);
                 
 
