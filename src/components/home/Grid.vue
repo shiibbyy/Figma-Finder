@@ -1,7 +1,7 @@
 <template>
     <div class="section grid">
 
-        <div class="container grid-container">
+        <div class="grid-container">
             <!-- <div class="filter-container">
                 <input type="text" v-model="search" placeholder="Search Finds">
             </div> -->
@@ -17,10 +17,12 @@
                     v-bind:resourceTitle="resource.resourceTitle"
                     v-bind:resourcePrice="resource.resourcePrice"
                     v-bind:creatorsName="resource.creatorsName"
+                    v-bind:creatorProfile="resource.creatorProfile"
                     v-bind:creatorImage="resource.creatorImage"
                     v-bind:downloadLink="resource.downloadLink"
                     v-bind:resourceOriginalLink="resource.resourceOriginalLink"
                     v-bind:resourceCategory="resource.resourceCategory"
+                    
                     
                 />
             </div>            
@@ -67,7 +69,7 @@ export default {
             return {
                 resources: [],
                 currentPage: 0,
-                pageSize: 16,
+                pageSize: 20,
                 visibleResources: [],
             }
         },
@@ -114,10 +116,7 @@ export default {
 @import '@/styles/global.scss';
 
 .grid .container {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
+
 }
 .filter-container {
     width: 100%;
@@ -126,6 +125,10 @@ export default {
 }
 
 .grid-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: $desktop-container + 30px;
 }
 
@@ -133,11 +136,29 @@ export default {
     background-color: $grey;
     padding-top: 100px;
     padding-bottom: 100px;
+
+    @media only screen and (max-width : $small-desktop) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    @media only screen and (max-width : $large-mobile) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
 
 .featured-card {
     min-width: 280px;
     flex-basis: 33.333%;
+
+    @media only screen and (max-width : $small-desktop) {
+        flex-basis: 49%;
+    }
+
+    @media only screen and (max-width : $large-mobile) {
+        flex-basis: 100%;
+    }
 }
 
 

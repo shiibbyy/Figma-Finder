@@ -45,10 +45,26 @@ export default {
     height: 70vh;
     background-color: $off-black;
     position: relative;
+
+    @media only screen and (max-width : $small-desktop) {
+        height: 100vh;
+    }
 }
 
 h1 {
     padding-bottom: 20px;
+
+        @media only screen and (max-width : $small-desktop) {
+        padding-bottom: 26px;
+    }
+
+    @media only screen and (max-width : $large-mobile) {
+        padding-bottom: 30px;
+    }
+}
+
+.hero .container {
+    margin: 0px 15px;
 }
 
 .form-row {

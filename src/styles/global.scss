@@ -19,6 +19,12 @@ $red: #F45921;
 
 //default section & container widths.
 
+$large-desktop: 1400px;
+$desktop: 1100px;
+$small-desktop: 900px;
+$tablet: 780px;
+$large-mobile: 650px;
+
 $desktop-container: 1140px;
 
 h1 {
@@ -27,6 +33,12 @@ h1 {
     line-height: 68px;
     font-weight: 700;
     margin: 0;
+
+    @media only screen and (max-width : $small-desktop) {
+        line-height: 40px;
+        font-size: 36px;
+    }
+
 }
 
 h2 {
@@ -35,6 +47,7 @@ h2 {
     line-height: 50px;
     font-weight: 700;
     margin: 0;
+    
 }
 
 h3 {
@@ -43,6 +56,11 @@ h3 {
     line-height: 36px;
     font-weight: 400;
     margin: 0;
+
+    @media only screen and (max-width : $small-desktop) {
+        line-height: 30px;
+        font-size: 20px;
+    }
 }
 
 h4 {
@@ -51,6 +69,11 @@ h4 {
     line-height: 24px;
     font-weight: 400;
     margin: 0;
+
+    @media only screen and (max-width : $small-desktop) {
+        font-size: 18px;
+        line-height: 24px
+    }
 }
 
 //h5

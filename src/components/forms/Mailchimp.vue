@@ -39,6 +39,11 @@ export default {
     width: 300px;
     border-radius: 4px;
     border: none;
+
+    @media only screen and (max-width : $small-desktop) {
+        height: 40px;
+        width: 200px;
+    }
 }
 
 .mailchimp-form {

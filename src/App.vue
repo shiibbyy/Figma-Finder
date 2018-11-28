@@ -14,7 +14,7 @@
             <mailchimp /> 
           </div>
           <h6 class="light">
-            Designed by Kieran Parker & Built by Joshua Parker
+            Designed & Built by <a class="light" href='https://twitter.com/_kprkr'>Kieran Parker</a>
           </h6>
           <h6 class="light">
             © 2018, FigmaFinder </br>
@@ -46,9 +46,18 @@ export default {
   background-color: $off-black;
 }
 
+.footer .container {
+    margin: 0px 15px;
+}
+
 .footer .content {
   padding-top: 80px;
   padding-bottom: 100px;
+
+    @media only screen and (max-width : $small-desktop) {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
 }
 
 .footer img {
@@ -75,6 +84,11 @@ export default {
     width: 300px;
     border-radius: 4px;
     border: none;
+
+    @media only screen and (max-width : $small-desktop) {
+        height: 30px;
+        width: 200px;
+    }
 }
 
 .footer .email-button {

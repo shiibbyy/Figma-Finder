@@ -12,9 +12,14 @@
                 <button class="price"><h6 class="bold">{{ resourcePrice }}</h6></button>
             </div>
             <div class="row-2">
-                <img :src="creatorImage" @error="defaultAvatar">
+                <a :href=creatorProfile target="_blank" >
+                    <img  :src="creatorImage" @error="defaultAvatar">
+                </a>
 
-                <p>By <strong>{{ creatorsName }}</strong></p>
+                <a :href=creatorProfile target="_blank" >
+                    <p>By <strong>{{ creatorsName }}</strong></p>
+                </a>
+                
             </div>
             <div class="row-3">
                 <a :href="downloadLink" class="btn main" target="_blank" >
@@ -33,7 +38,7 @@
 export default {
     name: 'FeatureCard',
     props: [
-        'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory',
+        'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile',
         ],
     data() {
         return {
@@ -80,21 +85,16 @@ export default {
     border-radius: 4px;
 }
 
-.feature-image-container .mobile {
-    background-color: $green;
-}
-
-.feature-image-container .mobile {
-    background-color: $red;
-}
-
-
 .feature-image {
     object-fit: cover;
     height: 262px;
     width: 100%;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+
+    @media only screen and (max-width : $large-mobile) {
+        height: 200px;
+    }
 }
 
 .card-content {
@@ -106,6 +106,10 @@ export default {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+
+    @media only screen and (max-width : $large-mobile) {
+        margin-bottom: 12px;
+    }
 }
 
 .row-1 .price {
@@ -115,12 +119,18 @@ export default {
     padding: 0px 10px;
     border-radius: 4px;
     height: 24px;
+
+    
 }
 
 .row-2 {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
+
+    @media only screen and (max-width : $large-mobile) {
+        margin-bottom: 20px;
+    }
 }
 
 .row-2 img {
@@ -132,6 +142,11 @@ export default {
 
 .row-2 p {
     margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.row-2 a {
+    text-decoration: none;
 }
 
 .row-3 {
