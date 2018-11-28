@@ -12,7 +12,7 @@
                 <div class="field">
                     <label for="title">Resource Title</label>
                     <input type="text" name="title" placeholder="Enter Resource Title" v-model="title">
-                </div>                    
+                </div>
 
                 <div class="field">
                     <label for="title">Creators Name</label>
@@ -66,15 +66,15 @@
 import SubmitResource from '@/components/forms/SubmitResource.vue'
 
 export default {
-    name: 'AddResource',
-    components: {
-        SubmitResource,
-    },
-    data() {
-        return {
-            
-        }
+  name: 'AddResource',
+  components: {
+    SubmitResource
+  },
+  data () {
+    return {
+
     }
+  }
 }
 </script>
 

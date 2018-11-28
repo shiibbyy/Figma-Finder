@@ -11,7 +11,6 @@
                 </div>
             </div>
 
-
         </div>
         <ul class="shapes">
             <li class="shape"></li>
@@ -31,10 +30,10 @@
 import Mailchimp from '@/components/forms/Mailchimp.vue'
 
 export default {
-    name: 'Hero',
-    components: {
-        Mailchimp,
-    }
+  name: 'Hero',
+  components: {
+    Mailchimp
+  }
 }
 </script>
 
@@ -114,7 +113,7 @@ h1 {
 @keyframes floating {
     from { transform: translate(0,  0px); }
     65%  { transform: translate(0, 10px); }
-    to   { transform: translate(0, -0px); }    
+    to   { transform: translate(0, -0px); }
 }
 
 .shape:nth-child(1) {

@@ -45,7 +45,7 @@
                                 <option value="Mobile">Mobile</option>
                                 <option value="Icons">Icons</option>
                                 <option value="Other">Other</option>
-                            </select> 
+                            </select>
                         </div>
 
                         <!-- <div class="form-field">
@@ -80,8 +80,6 @@
                 </div>
             </form>
 
-            
-            
         </div>
     </div>
 </template>
@@ -92,71 +90,71 @@ import slugify from 'slugify'
 import moment from 'moment'
 
 export default {
-    name: 'SubmitResource',
+  name: 'SubmitResource',
 
-    data() {
-        return {
-            resourceTitle: null,
-            featuredImage: null,
-            creatorsName: null,
-            creatorProfile: null,
-            creatorImage: null,
-            resourceOriginalLink: null,
-            resourceCategory: null,
-            resourcePrice: null,
-            downloadLink: null,
-            resourceDescription: null,
-            timestamp: null,
-            slug: null,
-        }
-    },
-
-    methods: {
-        SubmitResource(){
-            if (this.resourceTitle){
-                this.feedback = null
-                //create slug
-                this.slug = slugify(this.resourceTitle, {
-                    replacement: '-',
-                    remove: /[$*_+-:@"'`~±§?()]/g,
-                    lower: true
-                })
-
-                if (this.resourcePrice == 0) {
-                    this.resourcePrice = "FREE"
-                } else {
-                    this.resourcePrice = "$" + this.resourcePrice
-                }
-                
-                if (this.date = null) {
-                    this.date = firestore.FieldValue.serverTimestamp()
-                }
-
-                db.collection('resources').add({
-
-                    resourceTitle: this.resourceTitle,
-                    featuredImage: this.featuredImage,
-                    creatorsName: this.creatorsName,
-                    creatorProfile: this.creatorProfile,
-                    creatorImage: this.creatorImage,
-                    resourceOriginalLink: this.resourceOriginalLink,
-                    resourceCategory: this.resourceCategory,
-                    resourcePrice: this.resourcePrice,
-                    downloadLink: this.downloadLink,
-                    resourceDescription: this.resourceDescription,
-                    timestamp: moment(Date.now()).format('lll'),
-                    slug: this.slug
-
-                }).then(() => {
-                    this.$router.push({ name: 'home'})
-                }).catch(err => {
-                    console.log(err)
-                })
-            } else {
-                this.feedback = "You must enter a resource title"
-            }
-        }
+  data () {
+    return {
+      resourceTitle: null,
+      featuredImage: null,
+      creatorsName: null,
+      creatorProfile: null,
+      creatorImage: null,
+      resourceOriginalLink: null,
+      resourceCategory: null,
+      resourcePrice: null,
+      downloadLink: null,
+      resourceDescription: null,
+      timestamp: null,
+      slug: null
     }
+  },
+
+  methods: {
+    SubmitResource () {
+      if (this.resourceTitle) {
+        this.feedback = null
+        // create slug
+        this.slug = slugify(this.resourceTitle, {
+          replacement: '-',
+          remove: /[$*_+-:@"'`~±§?()]/g,
+          lower: true
+        })
+
+        if (this.resourcePrice == 0) {
+          this.resourcePrice = 'FREE'
+        } else {
+          this.resourcePrice = '$' + this.resourcePrice
+        }
+
+        if (this.date = null) {
+          this.date = firestore.FieldValue.serverTimestamp()
+        }
+
+        db.collection('resources').add({
+
+          resourceTitle: this.resourceTitle,
+          featuredImage: this.featuredImage,
+          creatorsName: this.creatorsName,
+          creatorProfile: this.creatorProfile,
+          creatorImage: this.creatorImage,
+          resourceOriginalLink: this.resourceOriginalLink,
+          resourceCategory: this.resourceCategory,
+          resourcePrice: this.resourcePrice,
+          downloadLink: this.downloadLink,
+          resourceDescription: this.resourceDescription,
+          timestamp: moment(Date.now()).format('lll'),
+          slug: this.slug
+
+        }).then(() => {
+          this.$router.push({ name: 'home' })
+        }).catch(err => {
+          console.log(err)
+        })
+      } else {
+        this.feedback = 'You must enter a resource title'
+      }
+    }
+  }
 }
 
 </script>
@@ -172,7 +170,7 @@ export default {
     margin-top: 8%;
     margin-bottom: 10%;
     background-color: $white;
-    width: 600px;    
+    width: 600px;
 }
 
 .header-image {
@@ -196,7 +194,6 @@ export default {
     margin-right: 10px;
     width: 100%;
 }
-
 
 .form-field input, textarea {
     border: solid;

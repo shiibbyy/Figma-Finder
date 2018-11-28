@@ -19,7 +19,7 @@
                 <a :href=creatorProfile target="_blank" >
                     <p>By <strong>{{ creatorsName }}</strong></p>
                 </a>
-                
+
             </div>
             <div class="row-3">
                 <a :href="downloadLink" class="btn main" target="_blank" >
@@ -36,25 +36,25 @@
 
 <script>
 export default {
-    name: 'FeatureCard',
-    props: [
-        'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile',
-        ],
-    data() {
-        return {
-            desktop: false,
-            mobile: false,
-        }
-    },
-    created() {
-        
-    },
-    methods: {
-        defaultAvatar() {
-            return require('../assets/FigmaFinder-Logo.png')
-        }
-    },
+  name: 'FeatureCard',
+  props: [
+    'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile'
+  ],
+  data () {
+    return {
+      desktop: false,
+      mobile: false
     }
+  },
+  created () {
+
+  },
+  methods: {
+    defaultAvatar () {
+      return require('../assets/FigmaFinder-Logo.png')
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -120,7 +120,6 @@ export default {
     border-radius: 4px;
     height: 24px;
 
-    
 }
 
 .row-2 {
@@ -168,7 +167,7 @@ export default {
 .row-3 .icon {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     padding: 0;
     height: 26px;
     width: 26px;

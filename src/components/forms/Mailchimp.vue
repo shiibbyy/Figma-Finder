@@ -3,7 +3,7 @@
         <div id="mc_embed_signup">
             <form action="https://figmafinder.us18.list-manage.com/subscribe/post?u=c85e237f64b4300c399048e89&amp;id=6f0abd32ba" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate mailchimp-form" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
-                
+
             <div class="mc-field-group">
                 <label for="mce-EMAIL" style="display:none">Email Address </label>
                 <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="Enter Email" class="email-input">
@@ -23,13 +23,11 @@
 <!--End mc_embed_signup-->
 </template>
 
-
 <script>
 export default {
-    name: 'Mailchimp'
+  name: 'Mailchimp'
 }
 </script>
-
 
 <style lang="scss">
 @import '@/styles/global.scss';

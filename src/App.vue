@@ -11,7 +11,7 @@
           <img src="@/assets/FigmaFinder-Logo.png" alt="Figma Finder">
           <p class="light">Whatever we find, directly to your inbox!</p>
           <div class="form-row">
-            <mailchimp /> 
+            <mailchimp />
           </div>
           <h6 class="light">
             Designed & Built by <a class="light" href='https://twitter.com/_kprkr'>Kieran Parker</a>
@@ -30,14 +30,11 @@
 import Mailchimp from '@/components/forms/Mailchimp.vue'
 
 export default {
-    components: {
-        Mailchimp,
-    }
+  components: {
+    Mailchimp
+  }
 }
 </script>
-
-
-
 
 <style lang="scss">
 @import '@/styles/global.scss';
