@@ -30,10 +30,10 @@
 import Mailchimp from '@/components/forms/Mailchimp.vue'
 
 export default {
-  name: 'Hero',
-  components: {
-    Mailchimp
-  }
+    name: 'Hero',
+    components: {
+        Mailchimp
+    }
 }
 </script>
 
@@ -42,6 +42,8 @@ export default {
 
 .hero {
     height: 70vh;
+    padding-top: -40px;
+    min-height: 400px;
     background-color: $off-black;
     position: relative;
 
@@ -89,7 +91,7 @@ h1 {
     align-items: center;
     position: absolute;
     width: inherit;
-    height: inherit;
+    height: 100%;
     overflow: hidden;
     z-index: 1;
 }

@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'Mailchimp'
+    name: 'Mailchimp'
 }
 </script>
 
