@@ -82,7 +82,8 @@ h1 {
 }
 
 .hero .content {
-    margin-top: -30px;
+    // margin-top: -30px;
+    padding-top: 30px;
 }
 
 .shapes {

@@ -51,12 +51,19 @@ export default {
       .get()
       .then(snapshot => {
         snapshot.forEach(doc => {
+    
+          
           let resource = doc.data()
           resource.id = doc.id
-          this.resources.push(resource)
+
+          if (resource.reviewed != false) {
+            this.resources.push(resource)
+          }
+          
         })
         this.resources = this.resources.reverse()
         this.updateVisibleResources()
+
       })
   },
 
@@ -64,7 +71,7 @@ export default {
     return {
       resources: [],
       currentPage: 0,
-      pageSize: 20,
+      pageSize: 18,
       visibleResources: []
     }
   },

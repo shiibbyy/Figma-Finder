@@ -25,9 +25,9 @@
                 <a :href="downloadLink" class="btn main" target="_blank" >
                     <p class="light semibold" for="info" >Download Resource</p>
                 </a>
-                <!-- <a :href="resourceOriginalLink" class="btn icon" target="_blank">
+                <a :href="resourceOriginalLink" class="btn icon" target="_blank">
                     <p class="light semibold">I</p>
-                </a> -->
+                </a>
             </div>
 
         </div>
@@ -38,7 +38,7 @@
 export default {
   name: 'FeatureCard',
   props: [
-    'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile'
+    'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile', 'reviewed'
   ],
   data () {
     return {

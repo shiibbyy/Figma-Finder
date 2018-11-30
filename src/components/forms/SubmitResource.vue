@@ -94,18 +94,20 @@ export default {
 
   data () {
     return {
-      resourceTitle: null,
-      featuredImage: null,
-      creatorsName: null,
-      creatorProfile: null,
-      creatorImage: null,
-      resourceOriginalLink: null,
-      resourceCategory: null,
-      resourcePrice: null,
-      downloadLink: null,
-      resourceDescription: null,
-      timestamp: null,
-      slug: null
+        resourceTitle: null,
+        featuredImage: null,
+        creatorsName: null,
+        creatorProfile: null,
+        creatorImage: null,
+        resourceOriginalLink: null,
+        resourceCategory: null,
+        resourcePrice: null,
+        downloadLink: null,
+        resourceDescription: null,
+        timestamp: null,
+        slug: null,
+        reviewed: false,
+    
     }
   },
 
@@ -143,7 +145,8 @@ export default {
           downloadLink: this.downloadLink,
           resourceDescription: this.resourceDescription,
           timestamp: moment(Date.now()).format('lll'),
-          slug: this.slug
+          slug: this.slug,
+          reviewed: this.reviewed,
 
         }).then(() => {
           this.$router.push({ name: 'home' })
