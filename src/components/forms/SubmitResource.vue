@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="form-field">
                             <label for="title">Resource Title</label>
-                            <input class="form-input" type="text" name="resourceTitle" placeholder="Enter Resource Title" v-model="resourceTitle">
+                            <input class="form-input" type="text" name="resourceTitle" placeholder="Enter Resource Title" v-model="resourceTitle" maxlength="40">
                         </div>
                         <div class="form-field">
                             <label for="title">Featured Image</label>
@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="form-field">
                             <label for="title">Creators Name</label>
-                            <input class="form-input" type="text" name="creatorsName" placeholder="Enter Name of Creator" v-model="creatorsName">
+                            <input class="form-input" type="text" name="creatorsName" placeholder="Enter Name of Creator" v-model="creatorsName" maxlength="26">
                         </div>
                         <div class="form-field">
                             <label for="title">Creators Social Profile</label>
@@ -101,7 +101,7 @@ export default {
         creatorImage: null,
         resourceOriginalLink: null,
         resourceCategory: null,
-        resourcePrice: null,
+        resourcePrice: 0,
         downloadLink: null,
         resourceDescription: null,
         timestamp: null,

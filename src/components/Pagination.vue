@@ -6,13 +6,17 @@
             <!-- <span v-if="showNextLink()" class="pagination-btn" v-on:click="updatePage(currentPage + 1)">></span> -->
 
             <div class="page-buttons-wrapper">
-                <button v-if="currentPage > 0" class="page-button" v-on:click="updatePage(currentPage - 1)"><p class="light semibold"></p></button>
+                <button v-if="currentPage > 0" class="page-button" v-on:click="updatePage(currentPage - 1)">
+                    <i class="material-icons">navigate_before</i>
+                </button>
 
                 <button class="page-button" v-for="(page, index) in totalPages()" :key="index" v-on:click="updatePage(index)">
                     <p class="light semibold">{{ index + 1}}</p>
                 </button>
 
-                <button v-if="currentPage < totalPages() - 1 " class="page-button" v-on:click="updatePage(currentPage + 1)"><p class="light semibold">></p></button>
+                <button v-if="currentPage < totalPages() - 1 " class="page-button" v-on:click="updatePage(currentPage + 1)">
+                    <i class="material-icons">navigate_next</i>
+                </button>
             </div>
             <div class="page-count">
                 <h6 class="dark-grey">Page {{ currentPage + 1}} of {{ totalPages() }}</h6>
@@ -78,6 +82,9 @@ export default {
     width: 32px;
     margin: 0px 5px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .page-count {

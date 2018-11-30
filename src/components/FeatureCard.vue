@@ -26,7 +26,7 @@
                     <p class="light semibold" for="info" >Download Resource</p>
                 </a>
                 <a :href="resourceOriginalLink" class="btn icon" target="_blank">
-                    <p class="light semibold">I</p>
+                    <p class="material-icons light md-18">info</p>
                 </a>
             </div>
 
@@ -106,6 +106,8 @@ export default {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    height: 48px;
+    align-items: flex-start;
 
     @media only screen and (max-width : $large-mobile) {
         margin-bottom: 12px;
@@ -116,6 +118,7 @@ export default {
     background-color: $white;
     border: 2px solid $black;
     color: $black;
+    margin-top: 4px;
     padding: 0px 10px;
     border-radius: 4px;
     height: 24px;
