@@ -38,6 +38,7 @@
 import FeatureCard from '@/components/FeatureCard.vue'
 import db from '@/firebase/init'
 import Pagination from '@/components/Pagination.vue'
+import defaultAvatar from '@/assets/defaultAvatar.png'
 
 export default {
   name: 'Grid',
@@ -79,7 +80,7 @@ export default {
       pageSize: 18,
       visibleResources: [],
       defaultAvatar: {
-        defaultImage: require('@/assets/defaultAvatar.jpg')
+        defaultImage: require('@/assets/defaultAvatar.png')
       }
     }
   },
