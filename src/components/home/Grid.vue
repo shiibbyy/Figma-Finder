@@ -46,6 +46,7 @@ export default {
     Pagination
   },
   created () {
+    
     db.collection('resources')
       .orderBy('timestamp')
       .get()
@@ -55,6 +56,10 @@ export default {
           
           let resource = doc.data()
           resource.id = doc.id
+
+          if (resource.creatorImage == null) {
+            resource.creatorImage = this.defaultAvatar.defaultImage
+          }
 
           if (resource.reviewed != false) {
             this.resources.push(resource)
@@ -72,7 +77,10 @@ export default {
       resources: [],
       currentPage: 0,
       pageSize: 18,
-      visibleResources: []
+      visibleResources: [],
+      defaultAvatar: {
+        defaultImage: require('@/assets/defaultAvatar.jpg')
+      }
     }
   },
 

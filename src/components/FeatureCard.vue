@@ -13,7 +13,7 @@
             </div>
             <div class="row-2">
                 <a :href=creatorProfile target="_blank" >
-                    <img  :src="creatorImage" @error="defaultAvatar">
+                    <img  :src="creatorImage">
                 </a>
 
                 <a :href=creatorProfile target="_blank" >
@@ -35,26 +35,21 @@
 </template>
 
 <script>
-export default {
-  name: 'FeatureCard',
-  props: [
-    'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile', 'reviewed'
-  ],
-  data () {
-    return {
-      desktop: false,
-      mobile: false
-    }
-  },
-  created () {
 
-  },
-  methods: {
-    defaultAvatar () {
-      return require('../assets/FigmaFinder-Logo.png')
-    }
-  }
+export default {
+    name: 'FeatureCard',
+    props: [
+    'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile', 'reviewed'
+    ],
+
+    data () {
+        return {
+            desktop: false,
+            mobile: false,
+        }
+    },
 }
+
 </script>
 
 <style lang="scss">

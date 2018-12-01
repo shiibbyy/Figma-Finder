@@ -23,7 +23,7 @@
               </li>
             </ul> -->
 
-            <!-- <button class="btn">Submit Resource</button> -->
+            <button @click="goToEvents()" class="btn"><p class="light">Submit Resource</p></button>            
             
           </div>
         </div>
@@ -88,6 +88,12 @@ export default {
   data() {
     return {
       isHovering: false
+    }
+  },
+
+  methods: {
+    goToEvents: function () {
+        window.open("https://kieranparker.typeform.com/to/sFahcC", "_blank")
     }
   },
 
@@ -159,6 +165,10 @@ export default {
 
 a:hover {
   color: $purple;
+}
+
+.navbar a:hover {
+  color: $blue;
 }
 
 button {
