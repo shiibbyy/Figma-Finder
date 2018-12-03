@@ -1,44 +1,53 @@
 <template>
-    <div v-if="resource" class="section resource">
-        <div class="container">
-            <div class="left">
-                <img class="header-image" :src="resource.featuredImage" alt="feature image">
+    <div v-if="resource" class="section figma-find">
+        <!-- header seciton -->
+        <div class="container header-container">
+            <div class="left-container">
+                <div class="image-wrapper">
+                    <img class="header-image" :src="resource.featuredImage" alt="feature image">
+                </div>
             </div>
-            <div class="right">
-                <h1 class="light">{{ resource.resourceTitle }}</h1>
-
-                <!-- <p class="light">{{ resource.resourceDescription }}</p> -->
+            <div class="right-container">
+                <h1 class="light">{{resource.resourceTitle}}</h1>
 
                 <div class="creator-row">
-                    <a :href=resource.creatorProfile target="_blank" >
-                        <img  :src="resource.creatorImage">
+
+                    <a :href="resource.creatorProfile">
+                        <img :src="resource.creatorImage" alt="Creator Image">
                     </a>
 
-                    <a :href=resource.creatorProfile target="_blank" >
-                        <p class="light">By <strong>{{ resource.creatorsName }}</strong></p>
+                    <a :href="resource.creatorProfile">
+                        <p class="light">
+                            By <Strong>{{resource.creatorsName}}</Strong>
+                        </p>
                     </a>
+
                 </div>
 
                 <div class="info-row">
-                    <button class="price"><h6 class="bold regular">{{ resource.resourcePrice }}</h6></button>
+                    <button class="price"><h6 class="bold">{{ resource.resourcePrice }}</h6></button>
 
-                    <a :href="resource.downloadLink" class="single-resource" target="_blank" >
-                    <p class="light semibold" for="info" >Download Resource</p>
+                    <a :href="downloadLink" class="resource-button" target="_blank" >
+                    <h5 class="light semibold" for="info" >Download Resource</h5>
                 </a>
                 </div>
-                
-            </div>
 
-        </div>
-        <div class="body-content">
-            <div class="narrow-container">
-                <div class="content">
-                    <h3 class="semibold">Words From {{ resource.creatorsName }}</h3>
-                    <p class="body-text">{{ resource.resourceDescription }}</p>
+                <div class="info-row">
+
                 </div>
+            </div>
         </div>
+
+        <!-- content body -->
+        <div class="container body-container">
+            <div class="container">
+                <h3 class="semibold">A Few Words From {{resource.creatorsName}}</h3>
+                <p class="body-text">{{resource.resourceDescription}}</p>
+                <a :href="downloadLink" class="btn main" target="_blank" >
+                    <p class="light semibold" for="info" >Download Resource</p>
+                </a>
+            </div>
         </div>
-        
         
     </div>    
 </template>
@@ -69,43 +78,50 @@ export default {
 <style lang="scss">
 @import "@/styles/global.scss";
 
-.resource {
-    height: 640px;
-    // padding-top: 40px;
-    min-height: 500px;
+.figma-find {
     background-color: $off-black;
-    position: relative;
 }
 
-.resource .container {
+.figma-find .header-container {
+    margin: 150px 0px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding-top: 40px;
-    flex-wrap: wrap;
 }
 
-.resource .left {
-    flex-basis: 50%;
+.left-container, .right-container {
+    flex-basis: 48%
 }
 
-.resource .header-image {
+.header-image {
     object-fit: cover;
-    height: 350px;
-    width: 450px;
+    height: 400px;
+    width: 100%;
     border-radius: 4px;
 }
 
-.resource .right {
-    flex-basis: 50%;
+.body-container {
+    background-color: $white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.resource h1 {
-    width: 80%
+.body-container .container { 
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0px;
+    width: $narrow-desktop-container;
 }
 
-.resource a {
-    text-decoration: none;
+.body-container h3 {
+    margin-bottom: 24px;
+}
+
+.body-container .btn {
+    margin-top: 60px;
+    text-align: center;
 }
 
 .creator-row {
@@ -122,68 +138,36 @@ export default {
 
 .creator-row p {
     margin-left: 10px;
-    margin-bottom: 5px;
-}
-
-.creator-row a {
-    text-decoration: none;
+    margin-bottom: 4px;
 }
 
 .info-row {
-    width: 100%;
     display: flex;
-    margin: 50px 0px 30px 0px;
+    align-content: center;
+    margin-top: 50px;
 }
 
 .info-row .price {
     background-color: $off-black;
     border: 1px solid $white;
-    color: $white;
+    margin: 0px;
     padding: 0px 20px;
     border-radius: 4px;
     height: 28px;
-    margin: 0px;
-}
-
-.info-row .single-resource {
-    display: flex;
-    align-items: center;
-    background-color: $purple;
-    color: $white;
-    padding: 0px 60px;
-    border-radius: 4px;
-    margin-left: 20px;
-    height: 28px;
+    margin-right: 20px;
 }
 
 .info-row h6 {
     color: $white;
 }
 
-.resource .body-content {
-    background-color: $white;
-    width: 100%;
+.info-row .resource-button {
     display: flex;
-    justify-content: center;
-    
+    align-items: center;
+    height: 28px;
+    background-color: $purple;
+    padding: 0px 46px;
+    border-radius: 4px;
 }
-
-// .resource .content {
-    
-// }
-
-.resource .body-text {
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
-}
-
-
-.resource h3 {
-    padding-bottom: 20px
-}
-
-
-
 
 </style>

@@ -5,7 +5,10 @@
       <div class="navbar">
         <div class="container">
           <div class="logo-container">
-            <img src="@/assets/FigmaFinder-Logo.png" alt="Figma Finder">
+            <a href="www.figmafinder.com">
+              <img src="@/assets/FigmaFinder-Logo.png" alt="Figma Finder">
+            </a>
+            
           </div>
 
           <div class="nav-menu-container">
