@@ -26,6 +26,7 @@ $tablet: 780px;
 $large-mobile: 650px;
 
 $desktop-container: 1140px;
+$narrow-desktop-container: 730px;
 
 h1 {
     font-size: 50px;
@@ -89,7 +90,7 @@ h6 {
 p {
     font-size: 14px;
     color: $off-black;
-    line-height: 19px;
+    line-height: 20px;
     font-weight: 400;
     margin: 0;
 }
@@ -100,6 +101,10 @@ p {
 
 .bold {
     font-weight: 700;
+}
+
+.regular {
+    font-weight: 400;
 }
 
 .light {
@@ -139,6 +144,10 @@ body {
 
 .container {
     width: $desktop-container;
+}
+
+.narrow-container {
+    width: $narrow-desktop-container;
 }
 
 

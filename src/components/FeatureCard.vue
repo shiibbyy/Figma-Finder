@@ -9,11 +9,13 @@
                 <h6 class="bold light">{{ resourceCategory }}</h6>
             </div>
 
-            <img class="feature-image" :src="featuredImage" alt="feature image">
+            <!-- <img class="feature-image" :src="featuredImage" alt="feature image"> -->
+            <router-link :to="{ name: 'FigmaFind', params: { resource_slug: this.slug }}"><img class="feature-image" :src="featuredImage" alt="feature image"></router-link>
         </div>
         <div class="card-content">
             <div class="row-1">
-                <h4 class="bold">{{ resourceTitle }}</h4>
+                <router-link :to="{ name: 'FigmaFind', params: { resource_slug: this.slug }}"><h4 class="bold">{{ resourceTitle }}</h4></router-link>                
+                
                 <button class="price"><h6 class="bold">{{ resourcePrice }}</h6></button>
             </div>
             <div class="row-2">
@@ -30,9 +32,9 @@
                 <a :href="downloadLink" class="btn main" target="_blank" >
                     <p class="light semibold" for="info" >Download Resource</p>
                 </a>
-                <a :href="resourceOriginalLink" class="btn icon" target="_blank">
+                <router-link class="btn icon" :to="{ name: 'FigmaFind', params: { resource_slug: this.slug }}"><p class="material-icons light md-18">info</p></router-link>
                     <p class="material-icons light md-18">info</p>
-                </a>
+
             </div>
 
         </div>
@@ -44,7 +46,7 @@
 export default {
     name: 'FeatureCard',
     props: [
-    'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile', 'reviewed', 
+    'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile', 'reviewed', 'resourceSlug'
     ],
 
     data () {
@@ -53,6 +55,7 @@ export default {
             mobile: false,
             icons: false,
             other: false,
+            slug: this.resourceSlug
         }
     },
 
@@ -61,6 +64,8 @@ export default {
     },
 
     methods: {
+        
+
         // updateCategory() {
         //     if ({resourceCategory} == "Mobile") {
         //         this.mobile = true
@@ -144,6 +149,10 @@ export default {
     border-radius: 4px;
     height: 24px;
 
+}
+
+.row-1 a {
+    text-decoration: none;
 }
 
 .row-2 {

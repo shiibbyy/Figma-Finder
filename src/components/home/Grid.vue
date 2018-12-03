@@ -22,6 +22,7 @@
           v-bind:downloadLink="resource.downloadLink"
           v-bind:resourceOriginalLink="resource.resourceOriginalLink"
           v-bind:resourceCategory="resource.resourceCategory"
+          v-bind:resourceSlug="resource.slug"
         />
       </div>
     </div>
@@ -46,6 +47,8 @@ export default {
     FeatureCard,
     Pagination
   },
+  props: [],
+
   created () {
     
     db.collection('resources')
@@ -71,6 +74,7 @@ export default {
         this.updateVisibleResources()
 
       })
+
   },
 
   data () {
