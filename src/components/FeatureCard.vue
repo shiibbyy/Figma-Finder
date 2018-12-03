@@ -1,9 +1,14 @@
 <template>
     <div class="feature-card">
         <div class="feature-image-container">
+            <!-- <div v-bind:class="compClasses" class="category-tag">
+                <h6 class="bold light">{{ resourceCategory }}</h6>
+            </div> -->
+
             <div v-bind:class="compClasses" class="category-tag">
                 <h6 class="bold light">{{ resourceCategory }}</h6>
             </div>
+
             <img class="feature-image" :src="featuredImage" alt="feature image">
         </div>
         <div class="card-content">
@@ -39,25 +44,46 @@
 export default {
     name: 'FeatureCard',
     props: [
-    'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile', 'reviewed'
+    'resourceTitle', 'featuredImage', 'resourcePrice', 'creatorsName', 'creatorImage', 'downloadLink', 'resourceOriginalLink', 'resourceCategory', 'creatorProfile', 'reviewed', 
     ],
 
     data () {
         return {
             desktop: false,
             mobile: false,
+            icons: false,
+            other: false,
         }
     },
+
+    created () {
+        
+    },
+
+    methods: {
+        // updateCategory() {
+        //     if ({resourceCategory} == "Mobile") {
+        //         this.mobile = true
+        //     }
+        // }
+    },
+
+    computed: {
+        compClasses: function() {
+            return {
+                desktop: this.desktop,
+                mobile: this.mobile,
+                icons: this.icons,
+                other: this.other
+            }
+        }
+    }
 }
 
 </script>
 
 <style lang="scss">
 @import '@/styles/global.scss';
-
-.available {
-    display: none;
-}
 
 .feature-card {
     margin: 18px 15px;
@@ -172,4 +198,23 @@ export default {
     margin-left: 10px;
     text-decoration: none !important;
 }
+
+//conditional class for category
+.feature-card .desktop {
+    background-color: $blue;
+}
+
+.feature-card .mobile {
+    background-color: $purple;
+}
+
+.feature-card .icons {
+    background-color: $green;
+}
+
+.feature-card .other {
+    background-color: $light-red;
+}
+
+
 </style>

@@ -81,7 +81,8 @@ export default {
       visibleResources: [],
       defaultAvatar: {
         defaultImage: require('@/assets/defaultAvatar.png')
-      }
+      },
+      
     }
   },
 
@@ -163,5 +164,9 @@ export default {
   @media only screen and (max-width: $large-mobile) {
     flex-basis: 100%;
   }
+}
+
+.feature-card .mobile {
+    background-color: $green !important;
 }
 </style>
