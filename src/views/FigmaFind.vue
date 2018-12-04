@@ -27,7 +27,7 @@
                 <div class="info-row">
                     <button class="price"><h6 class="bold">{{ resource.resourcePrice }}</h6></button>
 
-                    <a :href="downloadLink" class="resource-button" target="_blank" >
+                    <a :href="resource.downloadLink" class="resource-button" target="_blank" >
                     <h5 class="light semibold" for="info" >Download Resource</h5>
                 </a>
                 </div>
@@ -43,7 +43,7 @@
             <div class="container">
                 <h3 class="semibold">A Few Words From {{resource.creatorsName}}</h3>
                 <p class="body-text">{{resource.resourceDescription}}</p>
-                <a :href="downloadLink" class="btn main" target="_blank" >
+                <a :href="resource.downloadLink" class="btn main" target="_blank" >
                     <p class="light semibold" for="info" >Download Resource</p>
                 </a>
             </div>
@@ -63,6 +63,7 @@ export default {
         }
     },
 
+
     created() {
         let ref = db.collection('resources').where('slug', '==', this.$route.params.resource_slug)
         ref.get().then(snapshot => {
@@ -71,6 +72,7 @@ export default {
                 this.resource.id = doc.id
             })
         })
+
     }
 }
 </script>
@@ -139,6 +141,7 @@ export default {
 .creator-row p {
     margin-left: 10px;
     margin-bottom: 4px;
+    
 }
 
 .info-row {
@@ -169,5 +172,9 @@ export default {
     padding: 0px 46px;
     border-radius: 4px;
 }
+
+.figma-find a {
+    text-decoration: none;
+} 
 
 </style>

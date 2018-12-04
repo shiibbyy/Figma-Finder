@@ -33,7 +33,6 @@
                     <p class="light semibold" for="info" >Download Resource</p>
                 </a>
                 <router-link class="btn icon" :to="{ name: 'FigmaFind', params: { resource_slug: this.slug }}"><p class="material-icons light md-18">info</p></router-link>
-                    <p class="material-icons light md-18">info</p>
 
             </div>
 

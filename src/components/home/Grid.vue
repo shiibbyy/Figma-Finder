@@ -81,7 +81,7 @@ export default {
     return {
       resources: [],
       currentPage: 0,
-      pageSize: 18,
+      pageSize: 12,
       visibleResources: [],
       defaultAvatar: {
         defaultImage: require('@/assets/defaultAvatar.png')

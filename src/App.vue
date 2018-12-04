@@ -5,9 +5,9 @@
       <div class="navbar">
         <div class="container">
           <div class="logo-container">
-            <a href="www.figmafinder.com">
-              <img src="@/assets/FigmaFinder-Logo.png" alt="Figma Finder">
-            </a>
+            <router-link to="/">
+                  <img src="@/assets/FigmaFinder-Logo.png" alt="Figma Finder">
+                </router-link>
             
           </div>
 
