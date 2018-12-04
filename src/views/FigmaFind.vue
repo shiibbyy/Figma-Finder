@@ -57,9 +57,40 @@ import db from '@/firebase/init'
 
 export default {
     name: 'FigmaFind',
+
     data() {
         return {
             resource: null,
+            
+        }
+    },
+
+    metaInfo() {
+        return {
+            //basic info
+            title: 'Figma Resource',
+            meta: [
+                //basic description
+                {name: 'description', content: 'Figma Resources found by Figma Finder. Figma Finder is a collection of all the best Figma Resources found by us and our community. UI Kits, Icons, Mockups, etc. Created by those who love Figma for you!'},
+
+                //Google / Search Engine Tags
+                {itemprop: 'name', content: 'Figma Resources, UI Kits & Templates - FigmaFinder'},
+                {itemprop: 'description', content: 'Figma Resources found by Figma Finder. Figma Finder is a collection of all the best Figma Resources found by us and our community. UI Kits, Icons, Mockups, etc. Created by those who love Figma for you!'},
+                {itemprop: 'image', content: 'https://i.imgur.com/tUM1X5j.png'},
+
+                //twitter
+                {name: 'twitter:card', content: 'summary_large_image'},
+                {name: 'twitte:title', content: 'Figma Resources, UI Kits & Templates - FigmaFinder'},
+                {name: 'twitter:description', content: 'Figma Resources found by Figma Finder. Figma Finder is a collection of all the best Figma Resources found by us and our community. UI Kits, Icons, Mockups, etc. Created by those who love Figma for you!'},
+                {name: 'twitter:image', content: 'https://i.imgur.com/tUM1X5j.png'},
+
+                //facebook
+                {property: 'og:url', content: 'https://www.figmafinder.com'},
+                {property: "og:type", content: "website"},
+                {property: "og:title", content: "Figma Resources, UI Kits & Templates - FigmaFinder"},
+                {property: "og:description", content:"Figma Resources found by Figma Finder. Figma Finder is a collection of all the best Figma Resources found by us and our community. UI Kits, Icons, Mockups, etc. Created by those who love Figma for you!"},
+                {property: "og:image", content: "https://i.imgur.com/tUM1X5j.png"},
+            ],
         }
     },
 
@@ -71,6 +102,7 @@ export default {
                 this.resource = doc.data()
                 this.resource.id = doc.id
             })
+            
         })
 
     }
