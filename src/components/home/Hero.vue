@@ -5,10 +5,10 @@
             <div class="content">
                 <h1 class="light">Figma Finder</h1>
                 <h3 class="light">All the Figma Resources you need. <br>
-                Right here, right now, found by us.</h3>
-                <div class="form-row">
+                                    UI Kits, Mockups, Templates, Icons & Much More!</h3>
+                <!-- <div class="form-row">
                     <mailchimp />
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -43,7 +43,7 @@ export default {
 .hero {
     height: 70vh;
     padding-top: -40px;
-    min-height: 400px;
+    min-height: 600px;
     background-color: $off-black;
     position: relative;
 
@@ -53,7 +53,7 @@ export default {
 }
 
 h1 {
-    padding-bottom: 20px;
+    padding-bottom: 26px;
 
         @media only screen and (max-width : $small-desktop) {
         padding-bottom: 26px;
@@ -66,10 +66,12 @@ h1 {
 
 .hero .container {
     margin: 0px 15px;
+    text-align: center;
 }
 
 .form-row {
     display: flex;
+    justify-content: center;
     padding-top: 80px;
 }
 
@@ -79,11 +81,15 @@ h1 {
 
 .hero .container {
     z-index: 5;
+    display: flex;
+    justify-content: center;
 }
 
 .hero .content {
-    // margin-top: -30px;
-    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .shapes {
@@ -120,15 +126,15 @@ h1 {
 }
 
 .shape:nth-child(1) {
-    top: 15px;
-    left: -10px;
+    top: 25px;
+    left: -20px;
     background-color: $light-red;
     animation-delay: 2s;
 }
 
 .shape:nth-child(2) {
-    bottom: 0;
-    left: 50px;
+    bottom: 150px;
+    left: 40px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     animation-delay: 1s;
@@ -139,7 +145,8 @@ h1 {
     width: 50px;
     border-bottom-right-radius: 0;
     background-color: $green;
-    top: 150px;
+    top: 120px;
+    left: 250px;
     animation-delay: 0.5s;
 }
 
@@ -147,15 +154,15 @@ h1 {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     background-color: $light-red;
-    top: 170px;
+    top: 140px;
     right: 200px;
     animation-delay: 3s;
 }
 
 .shape:nth-child(5) {
     background-color: $green;
-    top: 50px;
-    right: 5px;
+    top: -30px;
+    right: 0px;
     animation-delay: 1s;
 }
 
@@ -164,7 +171,7 @@ h1 {
     width: 50px;
     border-top-left-radius: 0;
     background-color: $blue;
-    bottom: 275px;
+    bottom: 100px;
     right: 130px;
     animation-duration: 8s;
     animation-delay: 1.5s;
@@ -181,8 +188,8 @@ h1 {
 
 .shape:nth-child(8) {
     background-color: $blue;
-    margin-left: 200px;
-    margin-top: 300px;
+    margin-right: 400px;
+    margin-top: 520px;
     animation-duration: 7s;
     animation-delay: 2s;
 }
@@ -192,8 +199,8 @@ h1 {
     width: 50px;
     background-color: $purple;
     border-top-right-radius: 0;
-    margin-left: 285px;
-    margin-top: 215px;
+    margin-right: 320px;
+    margin-top: 440px;
 }
 
 </style>

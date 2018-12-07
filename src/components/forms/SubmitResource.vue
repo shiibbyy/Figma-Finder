@@ -144,7 +144,7 @@ export default {
           resourcePrice: this.resourcePrice,
           downloadLink: this.downloadLink,
           resourceDescription: this.resourceDescription,
-          timestamp: moment(Date.now()).format('lll'),
+          timestamp: moment(Date.now()).format('L'),
           slug: this.slug,
           reviewed: this.reviewed,
 

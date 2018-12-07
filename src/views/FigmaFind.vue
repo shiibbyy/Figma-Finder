@@ -117,15 +117,27 @@ export default {
 }
 
 .figma-find .header-container {
-    margin: 150px 0px;
+    margin: 150px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
+    @media only screen and (max-width : $tablet) {
+        flex-direction: column;
+        margin-bottom: 80px;
+    }
 }
 
 .left-container, .right-container {
-    flex-basis: 48%
+    flex-basis: 48%;
+
+    @media only screen and (max-width : $tablet) {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 .header-image {
@@ -147,6 +159,10 @@ export default {
     flex-direction: column;
     padding: 100px 0px;
     width: $narrow-desktop-container;
+    @media only screen and (max-width : $tablet) {
+        padding: 70px;
+        margin: 0 20px;
+    }
 }
 
 .body-container h3 {

@@ -211,8 +211,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0px 15px;
-  padding: 16px 0px;
+  padding: 24px 20px;
+  
 }
 
 .navbar .logo-container, .mobile-navbar .logo-container {
@@ -252,7 +252,7 @@ button {
 }
 
 .footer .container {
-    margin: 0px 15px;
+    margin: 0px 20px;
 }
 
 .footer .content {
@@ -275,6 +275,8 @@ button {
 }
 
 .footer .form-row {
+  display: flex;
+  justify-content: flex-start;
   padding-top: 10px;
   padding-bottom: 30px;
 }

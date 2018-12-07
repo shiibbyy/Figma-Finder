@@ -15,6 +15,7 @@
         <FeatureCard
           v-bind:featuredImage="resource.featuredImage"
           v-bind:resourceTitle="resource.resourceTitle"
+          v-bind:resourceDescription="resource.resourceDescription"
           v-bind:resourcePrice="resource.resourcePrice"
           v-bind:creatorsName="resource.creatorsName"
           v-bind:creatorProfile="resource.creatorProfile"
@@ -125,8 +126,6 @@ export default {
 <style lang="scss">
 @import "@/styles/global.scss";
 
-.grid .container {
-}
 .filter-container {
   width: 100%;
   margin-right: 15px;
@@ -135,7 +134,7 @@ export default {
 
 .grid-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
   width: $desktop-container + 30px;
@@ -159,7 +158,7 @@ export default {
 
 .featured-card {
   min-width: 280px;
-  flex-basis: 33.333%;
+  flex-basis: 25%;
 
   @media only screen and (max-width: $small-desktop) {
     flex-basis: 49%;
