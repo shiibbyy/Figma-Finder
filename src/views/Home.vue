@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Hero />
+    <Featured />
     <Grid />
 
   </div>
@@ -10,6 +11,7 @@
 // @ is an alias to /src
 import Hero from '@/components/home/Hero.vue'
 import Grid from '@/components/home/Grid.vue'
+import Featured from '@/components/home/Featured.vue'
 
 export default {
   name: 'home',
@@ -42,7 +44,8 @@ export default {
 
   components: {
     Hero,
-    Grid
+    Grid,
+    Featured,
   },
 }
 </script>

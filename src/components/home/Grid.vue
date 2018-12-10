@@ -38,6 +38,7 @@
 
 <script>
 import FeatureCard from '@/components/FeatureCard.vue'
+import Featured from '@/components/home/Featured.vue'
 import db from '@/firebase/init'
 import Pagination from '@/components/Pagination.vue'
 import defaultAvatar from '@/assets/defaultAvatar.png'
@@ -46,7 +47,8 @@ export default {
   name: 'Grid',
   components: {
     FeatureCard,
-    Pagination
+    Pagination,
+    Featured
   },
   props: [],
 
@@ -142,8 +144,8 @@ export default {
 
 .grid {
   background-color: $grey;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
   @media only screen and (max-width: $small-desktop) {
     padding-top: 20px;
