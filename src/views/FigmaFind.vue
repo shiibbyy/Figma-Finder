@@ -68,7 +68,7 @@ export default {
     metaInfo() {
         return {
             //basic info
-            title: resource.resourceTitle,
+            title: this.resourceTitle,
             meta: [
                 //basic description
                 {name: 'description', content: 'Figma Resources found by Figma Finder. Figma Finder is a collection of all the best Figma Resources found by us and our community. UI Kits, Icons, Mockups, etc. Created by those who love Figma for you!'},

@@ -5,7 +5,7 @@
             <h4 class="light line-two">Figma UI Kit Sale Now On over at...</h4>
             <h2 class="light ui8">UI 8</h2>
             <h4 class="light line-three">Up To 50% Off</h4>
-            <a href="https://ui8.net/?rel=figma" class="resource-button" target="_blank" >
+            <a href="http://bit.ly/figmafinder" class="resource-button" target="_blank" >
                 <h5 class="light semibold" for="info" >Shop Now</h5>
             </a>
         </div>
