@@ -65,13 +65,13 @@ export default {
         }
     },
 
-    // metaInfo() {
-    //     return {
-    //         //basic info
-    //         title: 'Figma Resource',
-    //         meta: [
-    //             //basic description
-    //             {name: 'description', content: 'Figma Resources found by Figma Finder. Figma Finder is a collection of all the best Figma Resources found by us and our community. UI Kits, Icons, Mockups, etc. Created by those who love Figma for you!'},
+    metaInfo() {
+        return {
+            //basic info
+            title: 'Figma Resource',
+            meta: [
+                //basic description
+                {name: 'description', content: 'Figma Resources found by Figma Finder. Figma Finder is a collection of all the best Figma Resources found by us and our community. UI Kits, Icons, Mockups, etc. Created by those who love Figma for you!'},
 
     //             //Google / Search Engine Tags
     //             {itemprop: 'name', content: 'Figma Resources, UI Kits & Templates - FigmaFinder'},
@@ -90,9 +90,9 @@ export default {
     //             {property: "og:title", content: "Figma Resources, UI Kits & Templates - FigmaFinder"},
     //             {property: "og:description", content:"Figma Resources found by Figma Finder. Figma Finder is a collection of all the best Figma Resources found by us and our community. UI Kits, Icons, Mockups, etc. Created by those who love Figma for you!"},
     //             {property: "og:image", content: "https://i.imgur.com/tUM1X5j.png"},
-    //         ],
-    //     }
-    // },
+            ],
+        }
+    },
 
 
     created() {
