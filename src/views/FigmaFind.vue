@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="right-container">
-                <h1 class="light">{{resource.resourceTitle}}</h1>
+                <h1 class="light">{{ resource.resourceTitle }}</h1>
 
                 <div class="creator-row">
 
@@ -57,19 +57,18 @@ import db from '@/firebase/init'
 
 export default {
     name: 'FigmaFind',
-    props: ['resourceTitle', 'resource'],
+    props: ['resource'],
 
     data() {
         return {
-            resource: null,
-            pageTitle: this.resourceTitle
+            
         }
     },
 
     metaInfo() {
         return {
             //basic info
-            title: 'Figma Resource',
+            title: this.resource.resourceTitle,
             meta: [
                 //basic description
                 {name: 'description', content: 'Figma Resources, UI Kits, Icon sets and more. This is just one of many finds by Figma Finder.'},
@@ -105,6 +104,8 @@ export default {
             })
             
         })
+
+        
 
     }
 }
