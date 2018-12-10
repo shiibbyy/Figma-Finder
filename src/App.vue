@@ -86,7 +86,7 @@ import Mailchimp from '@/components/forms/Mailchimp.vue'
 export default {
   metaInfo: {
     //basic info
-    title: 'Figma Resources, UI Kits & Templates - FigmaFinder',
+    title: 'Figma Resources, UI Kits & Templates',
     titleTemplate: '%s - Figma Finder',
     meta: [
       //basic description
