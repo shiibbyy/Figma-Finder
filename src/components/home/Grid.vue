@@ -162,8 +162,13 @@ export default {
   min-width: 280px;
   flex-basis: 25%;
 
-  @media only screen and (max-width: $small-desktop) {
-    flex-basis: 49%;
+  @media only screen and (max-width: 1120px) {
+    min-width: 320px;
+  }
+
+  @media only screen and (max-width: 960px) {
+    flex-basis: 50%;
+    min-width: 280px;
   }
 
   @media only screen and (max-width: $large-mobile) {

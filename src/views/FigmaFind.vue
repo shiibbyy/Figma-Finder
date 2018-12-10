@@ -57,11 +57,11 @@ import db from '@/firebase/init'
 
 export default {
     name: 'FigmaFind',
+    props: ['resourceTitle', 'resource'],
 
     data() {
         return {
             resource: null,
-            
         }
     },
 
